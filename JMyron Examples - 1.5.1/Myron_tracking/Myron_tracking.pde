@@ -15,12 +15,12 @@ import JMyron.*;
 JMyron m;
  
 void setup(){
-  int w = 320;
-  int h = 240;
+  int w = 640;
+  int h = 480;
   
   size(w,h);
   m = new JMyron();
-  m.start(320,240);
+  m.start(w,h);
   m.findGlobs(1);
   println("Myron " + m.version());
 }
@@ -58,7 +58,7 @@ void draw(){
   stroke(255,255,0);
   for(int i=0;i<a.length;i++){
     int[] p = a[i];
-    point(p[0],p[1]);
+    rect(p[0]-2,p[1]-2,3,3);
   }
  
 
@@ -75,7 +75,7 @@ void draw(){
   int list[][][] = m.globPixels();
   stroke(110,110,110);
   
-  for(int i=0;i<list.length;i++){
+  /*for(int i=0;i<list.length;i++){
     int[][] pixellist = list[i];
     if(pixellist!=null){
       beginShape(POINTS);
@@ -85,10 +85,10 @@ void draw(){
       }
       endShape();
      }
-  }
+  }*/
 
   //draw edge points (same as last, but vector based)
-  list = m.globEdgePoints(20);
+  /*list = m.globEdgePoints(20);
   stroke(0,128,0);
   for(int i=0;i<list.length;i++){
     int[][] contour = list[i];
@@ -99,10 +99,10 @@ void draw(){
       }
       endShape();
      }
-  }
+  }*/
 
   //draw quads - like bounding box, but a 4-pointed polygon.
-  a = m.globQuads(50,51);
+  /*a = m.globQuads(50,51);
   stroke(0,0,100);
   for(int i=0;i<a.length;i++){
     int[] b = a[i];
@@ -110,7 +110,7 @@ void draw(){
          b[2], b[3],
          b[4], b[5],
          b[6], b[7]);
-  }
+  }*/
 
 
 
