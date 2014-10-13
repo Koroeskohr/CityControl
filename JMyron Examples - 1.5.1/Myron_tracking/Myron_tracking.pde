@@ -30,16 +30,27 @@ void mousePressed(){
 }
 
 void draw(){
-  m.trackColor(255,255,255,255);
+  m.trackColor(255,255,255,255); //????
 
   m.update();
   int[] img = m.image();
   
   //first draw the camera view onto the screen
   loadPixels();
+  
+  /* Mirrorise la caméra mais les autres dessins ne sont pas affectés
+  for(int i=1; i<width;i++){
+    for(int j=1;j<height;j++){
+      this.pixels[(m.width() - i - 1) + j * m.width()] = imgNormal[(i) + j * m.width()];
+    }
+  }*/
+  
+
   for(int i=0;i<width*height;i++){
       pixels[i] = img[i];
   }
+  
+  
   updatePixels();
   
   
@@ -52,7 +63,7 @@ void draw(){
   noFill();
   int[][] a;
 
-
+  //les rectangles jaunes, points qui nous intéresseront
   //draw center points of globs
   a = m.globCenters();
   stroke(255,255,0);
@@ -61,8 +72,8 @@ void draw(){
     rect(p[0]-2,p[1]-2,3,3);
   }
  
-
-  //draw bounding boxes of globs
+  //les rectangles rouges
+  //draw bounding boxes of globs 
   a = m.globBoxes();
   stroke(255,0,0);
   for(int i=0;i<a.length;i++){
