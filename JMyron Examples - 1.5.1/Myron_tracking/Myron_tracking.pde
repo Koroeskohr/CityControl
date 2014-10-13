@@ -30,7 +30,8 @@ void mousePressed(){
 }
 
 void draw(){
-  m.trackColor(255,255,255,255); //????
+  m.trackColor(75,210,50,255); //????
+  m.sensitivity(70);
 
   m.update();
   int[] img = m.image();
@@ -54,6 +55,7 @@ void draw(){
   updatePixels();
   
   
+  /////// Ca sert à rien
   //draw an averaged color block where the mouse is.
   //noStroke();
   //int c = m.average(mouseX-20,mouseY-20,mouseX+20,mouseY+20);
