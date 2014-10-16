@@ -41,7 +41,7 @@ void mousePressed(){
 void draw(){
   
   
-  m.trackColor(255,255,255,255); //????
+  m.trackColor(75,192,60,255); //????
   m.sensitivity(100);
 
   m.update();
@@ -104,8 +104,7 @@ void draw(){
   
   
   
-  a = m.globCenters();
-  stroke(255,255,0);
+ 
   
   if (a.length > 0) {
     //println(a[0]);
@@ -124,13 +123,16 @@ void draw(){
     
     
     if (firstFrame == 0) {
-      
-      int delta = a[i][0] - xLastFrame;
-     println(delta); 
-      
-    }
+ 
+     int delta = a[i][0] - xLastFrame;
+     println(delta);    
+   
+  }
     
     xLastFrame = a[i][0];
+    
+     a = m.globCenters();
+  stroke(255,255,0);
   }
   
   
