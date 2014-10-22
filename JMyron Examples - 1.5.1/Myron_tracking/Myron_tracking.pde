@@ -27,6 +27,7 @@ void setup(){
   
   
   size(w,h);
+  background(0);
   m = new JMyron();
   m.start(wCam,hCam);
   m.findGlobs(1);
@@ -41,7 +42,7 @@ void mousePressed(){
 void draw(){
   
   
-  m.trackColor(75,192,60,255); //????
+  m.trackColor(73,142,230,255); //????
   m.sensitivity(100);
 
   m.update();
@@ -100,17 +101,8 @@ void draw(){
     //println(a[i][0] + " " + a[i][1] + " " +  a[i][2] + " " +  a[i][3]);
     rect(a[i][0], a[i][1], a[i][2], a[i][3]);
   }
-  
-  
-  
-  
- 
-  
   if (a.length > 0) {
-    //println(a[0]);
-  
-
-    
+    //println(a[0]);  
     int[] b = a[i];
     
     //println(i + " C'est ca");
@@ -118,9 +110,6 @@ void draw(){
 //println(b[0]);
     //println(a[i][0] + " " + a[i][1] + " " +  a[i][2] + " " +  a[i][3]);
     rect(a[i][0], a[i][1], 3, 3);
-    
-    
-    
     
     if (firstFrame == 0) {
  
